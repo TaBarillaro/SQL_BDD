@@ -2,7 +2,7 @@ CREATE DATABASE IF NOT EXISTS projet2fou;
 
 USE projet2fou;
 
-    CREATE TABLE User_(
+CREATE TABLE User_(
    Id_User_ int,
    lastname VARCHAR(100) NOT NULL,
    firstname VARCHAR(100) NOT NULL,
@@ -20,6 +20,7 @@ USE projet2fou;
    UNIQUE(email)
 );
 
+
 CREATE TABLE game_list(
    Id_Game INT,
    name_ VARCHAR(150),
@@ -33,6 +34,7 @@ CREATE TABLE game_list(
    PRIMARY KEY(Id_Game)
 );
 
+-- table customization_board relation avec game_list et User_
 CREATE TABLE customization_board(
    Id_customization_board INT,
    color VARCHAR(50),
@@ -46,6 +48,7 @@ CREATE TABLE customization_board(
    FOREIGN KEY(Id_User_) REFERENCES User_(Id_User_)
 );
 
+-- table customization_pawn relation avec game_list et User_
 CREATE TABLE customization_pawn(
    Id_customization_pawn INT,
    color VARCHAR(50),
@@ -77,6 +80,7 @@ CREATE TABLE pack_token(
    PRIMARY KEY(Id_token)
 );
 
+-- table BoardGame relation avec game_list et User_
 CREATE TABLE BoardGame(
    Id_BoardGame INT,
    date_game DATETIME,
@@ -87,6 +91,7 @@ CREATE TABLE BoardGame(
    FOREIGN KEY(Id_User_) REFERENCES User_(Id_User_)
 );
 
+-- table order_ relation avec pack_token et User_
 CREATE TABLE order_(
    id VARCHAR(50),
    date_ DATETIME,
