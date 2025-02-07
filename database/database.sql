@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS projet2fou;
 USE projet2fou;
 
 CREATE TABLE User_(
-   Id_User_ int,
+   Id_User_ int AUTO_INCREMENT,
    lastname VARCHAR(100) NOT NULL,
    firstname VARCHAR(100) NOT NULL,
    username VARCHAR(150) NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE User_(
 
 
 CREATE TABLE game_list(
-   Id_Game INT,
+   Id_Game int AUTO_INCREMENT,
    name_ VARCHAR(150),
    size INT,
    boardgame_size INT,
@@ -36,7 +36,7 @@ CREATE TABLE game_list(
 
 -- table customization_board relation avec game_list et User_
 CREATE TABLE customization_board(
-   Id_customization_board INT,
+   Id_customization_board int AUTO_INCREMENT,
    color VARCHAR(50),
    image VARCHAR(255),
    size INT,
@@ -50,7 +50,7 @@ CREATE TABLE customization_board(
 
 -- table customization_pawn relation avec game_list et User_
 CREATE TABLE customization_pawn(
-   Id_customization_pawn INT,
+   Id_customization_pawn int AUTO_INCREMENT,
    color VARCHAR(50),
    image VARCHAR(255),
    pattern VARCHAR(255),
@@ -62,7 +62,7 @@ CREATE TABLE customization_pawn(
 );
 
 CREATE TABLE parent_detail(
-   Id_parent_detail INT,
+   Id_parent_detail int AUTO_INCREMENT,
    firstname VARCHAR(150),
    lastname VARCHAR(150),
    email VARCHAR(255),
@@ -71,7 +71,7 @@ CREATE TABLE parent_detail(
 );
 
 CREATE TABLE pack_token(
-   Id_token INT,
+   Id_token int AUTO_INCREMENT,
    pack_name VARCHAR(150) NOT NULL,
    validity_start_date DATE,
    validity_end_date DATE,
@@ -82,7 +82,7 @@ CREATE TABLE pack_token(
 
 -- table BoardGame relation avec game_list et User_
 CREATE TABLE BoardGame(
-   Id_BoardGame INT,
+   Id_BoardGame int AUTO_INCREMENT,
    date_game DATETIME,
    Id_Game INT NOT NULL,
    Id_User_ INT NOT NULL,
@@ -93,7 +93,7 @@ CREATE TABLE BoardGame(
 
 -- table order_ relation avec pack_token et User_
 CREATE TABLE order_(
-   id VARCHAR(50),
+   id int AUTO_INCREMENT,
    date_ DATETIME,
    order_number VARCHAR(100),
    Id_token INT NOT NULL,
